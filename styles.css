@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #9ed8ff; /* sky blue */
+}
+
+.scene { /* linked to scene in index, size and position of dino and ground */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ground {
+    position: absolute; /* does not move */
+    bottom: 0; /* positions on the botoom */
+    width: 200%;
+    height: 160px;
+    background: repeating-linear-gradient( /* repeats the ground */
+        90deg,
+        #6b4f2d,
+        #6b4f2d 40px,
+        #83623a 40px,
+        #83623a 80px
+    );
+    animation: moveGround 0.5s linear infinite; /* simple animation to move the ground indefinitely */
+}
+
+@keyframes moveGround {
+    from { transform: translateX(0); }
+    to { transform: translateX(-80px); }
+}
+
+#dino {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: auto;
+}
